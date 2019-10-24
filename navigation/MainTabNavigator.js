@@ -1,5 +1,5 @@
 import React from 'react'
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
 import TabBarIcon from '../components/TabBarIcon'
 
@@ -66,29 +66,22 @@ RestaurantsStack.navigationOptions = {
     />
   ),
 }
-
-RestaurantsStack.path = ''
-
-const tabNavigator = createBottomTabNavigator(
-  {
+export default createAppContainer(
+  createBottomTabNavigator({
     MyScheduleStack,
     RecipesStack,
     RestaurantsStack,
   },
-  {
-    tabBarOptions: {
-      activeTintColor: '#173143',
-      style: {
-        height: 55,
-        paddingVertical: 10
+    {
+      tabBarOptions: {
+        activeTintColor: '#173143',
+        style: {
+          height: 55,
+          paddingVertical: 10
+        },
       },
-    },
-    initialLayout: {
-      height: 55,
-    }
-  }
-)
-
-tabNavigator.path = ''
-
-export default tabNavigator
+      initialLayout: {
+        height: 55,
+      }
+    })
+);

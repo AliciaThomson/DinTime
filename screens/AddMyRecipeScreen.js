@@ -28,7 +28,7 @@ class AddMyRecipeScreen extends React.Component {
   }
 
   handleSubmit = formState => {
-    this.props.updateMyRecipe({ id: formState.id, label: formState.label, image: formState.image, healthLabels: formState.healthLabels, ingredientLines: formState.ingredientLines, favourite: true })
+    this.props.updateMyRecipe({ id: formState.id, label: formState.label, image: formState.image, dietLabels: formState.dietLabels, ingredientLines: formState.ingredientLines, favourite: true })
     this.props.navigation.navigate('MyRecipeList')
   }
 

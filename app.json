@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Final Project",
-    "slug": "projectfinal",
+    "name": "SupTime",
+    "slug": "suptime",
     "privacy": "public",
     "sdkVersion": "34.0.0",
     "platforms": [
@@ -24,7 +24,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.suptime"
+    },
+    "android": {
+      "package": "com.suptime"
     },
     "description": ""
   }

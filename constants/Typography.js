@@ -5,7 +5,7 @@ export default {
         color: '#173143',
         marginTop: 20,
         marginBottom: 10,
-        fontFamily: 'Quicksand-Bold'
+        fontFamily: 'Montserrat-Bold'
     },
     headingThree: {
         fontSize: 18,
@@ -13,7 +13,7 @@ export default {
         color: '#173143',
         marginTop: 20,
         marginBottom: 10,
-        fontFamily: 'Quicksand-Bold'
+        fontFamily: 'Montserrat-Bold'
     },
     headingFour: {
         fontSize: 14,

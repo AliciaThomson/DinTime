@@ -4,7 +4,7 @@ import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Platform, StatusBar } from 'react-native'
-import AppNavigator from './navigation/AppNavigator'
+import MainTabNavigator from './navigation/MainTabNavigator'
 import { store, persistor } from './redux/store'
 
 export default class App extends React.Component {
@@ -28,7 +28,7 @@ export default class App extends React.Component {
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            <AppNavigator />
+            <MainTabNavigator />
           </PersistGate>
         </Provider>
       )
@@ -39,6 +39,7 @@ export default class App extends React.Component {
 loadResourcesAsync = async () => {
   await Promise.all([
     Font.loadAsync({
+      'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
       'Quicksand-Regular': require('./assets/fonts/Quicksand-Regular.ttf'),
       'Quicksand-Medium': require('./assets/fonts/Quicksand-Medium.ttf'),
       'Quicksand-Bold': require('./assets/fonts/Quicksand-Bold.ttf'),

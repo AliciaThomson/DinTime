@@ -4,7 +4,7 @@ const processRecipe = (recipe, favourites) => {
     id: recipe.uri,
     image: recipe.image,
     label: recipe.label,
-    healthLabels: recipe.healthLabels,
+    dietLabels: recipe.dietLabels,
     ingredientLines: recipe.ingredientLines,
     totalDaily: { carbs: {}, fat: {}, protein: {} },
     favourite: favourites.some(favourite => favourite.id == recipe.uri)
@@ -75,20 +75,4 @@ export const fetchRestaurant = async (id, favourites) => {
       }
     })
   }
-}
-
-export const login = async (username, password) => {
-  const response = await fetch('http://localhost:8000', {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ username, password }),
-  })
-
-  if (response.ok) {
-    const { token } = await response.json()
-    return token
-  }
-
-  const errMessage = await response.text()
-  throw new Error(errMessage)
 }

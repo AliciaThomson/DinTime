@@ -13,7 +13,7 @@ export default class AddRecipeForm extends React.Component {
     id: '',
     label: '',
     image: '',
-    healthLabels: [],
+    dietLabels: [],
     ingredientLines: [],
     takePhoto: false,
     isFormValid: false,
@@ -46,8 +46,8 @@ export default class AddRecipeForm extends React.Component {
       if (this.props.recipe.image) {
         this.setState({ image: this.props.recipe.image })
       }
-      if (this.props.recipe.healthLabels) {
-        this.setState({ healthLabels: this.props.recipe.healthLabels })
+      if (this.props.recipe.dietLabels) {
+        this.setState({ dietLabels: this.props.recipe.dietLabels })
       }
       if (this.props.recipe.ingredientLines) {
         this.setState({ ingredientLines: this.props.recipe.ingredientLines })
@@ -71,7 +71,7 @@ export default class AddRecipeForm extends React.Component {
   }
   handleTags = (type, tags) => {
     if (type == 'Health Labels') {
-      this.setState({ healthLabels: tags })
+      this.setState({ dietLabels: tags })
     } else if (type == 'Ingredients') {
       this.setState({ ingredientLines: tags })
     }
@@ -119,7 +119,7 @@ export default class AddRecipeForm extends React.Component {
           <Image source={{ uri: this.state.image }} style={{ width: 200, height: 200 }} />
         )}
         <Text style={FormStyles.label}>Health Labels</Text>
-        <TagInput label="Health Labels" value={this.state.healthLabels} onChangeTags={this.handleTags} />
+        <TagInput label="Health Labels" value={this.state.dietLabels} onChangeTags={this.handleTags} />
         <Text style={FormStyles.label}>Ingredients</Text>
         <TagInput label="Ingredients" value={this.state.ingredientLines} onChangeTags={this.handleTags} />
         <Button title="Submit" onPress={this.handleSubmit} disabled={!this.state.isFormValid} />

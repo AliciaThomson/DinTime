@@ -27,9 +27,9 @@ export default RecipeDetails = props => (
             <Text style={Typography.headingTwo}>
                 {props.recipe.label}
             </Text>
-            {props.recipe.healthLabels && (
-                <View key="healthLabels">
-                    {props.recipe.healthLabels.map((item, index) =>
+            {props.recipe.dietLabels && (
+                <View key="dietLabels">
+                    {props.recipe.dietLabels.map((item, index) =>
                         <Text key={index}>
                             {item}
                         </Text>

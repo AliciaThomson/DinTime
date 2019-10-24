@@ -62,10 +62,6 @@ class MyScheduleScreen extends React.Component {
         }
     }
 
-    handleRandomRecipe = (id, weekday, recipeID, type) => {
-        const newEntry = { weekday, id, recipeID: recipeID, type: type }
-        this.props.updateSchedule(newEntry)
-    }
 
     // Uses the Current Week Array and Adds Entries Referencing the Redux Schedule
     updateThisWeek = () => {

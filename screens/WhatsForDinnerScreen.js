@@ -1,12 +1,19 @@
 import React from 'react'
-import { ScrollView, Text, Button, StyleSheet } from 'react-native'
+import { ScrollView, Text, StyleSheet } from 'react-native'
+import { Button } from 'react-native-elements'
 
 export default class WhatsForDinnerScreen extends React.Component {
+
+    handleRandomRecipe = (id, weekday, recipeID, type) => {
+        const newEntry = { weekday, id, recipeID: recipeID, type: type }
+        this.props.updateSchedule(newEntry)
+    }
 
     render() {
         return (
             <ScrollView style={styles.container}>
-                <Text>What's for Dinner</Text>
+                <Text>What Do You Want to Do?</Text>
+                <TouchableOpacity></TouchableOpacity>
                 <Button title="Go to random recipe" onPress={this.goToRandomRecipe} />
             </ScrollView>
         )

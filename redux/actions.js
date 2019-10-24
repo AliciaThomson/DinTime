@@ -1,4 +1,4 @@
-import { login } from '../api'
+//import { login } from '../api'
 
 /* --  Action Types  -- */
 
@@ -53,7 +53,7 @@ export const removeScheduleEntry = id => ({
 })
 
 /* --  Async Action Creator  -- */
-
+/*
 export const logInUser = (username, password) => async dispatch => {
   dispatch({ type: LOG_IN_SENT })
   try {
@@ -63,3 +63,4 @@ export const logInUser = (username, password) => async dispatch => {
     dispatch({ type: LOG_IN_REJECTED, payload: err.message })
   }
 }
+*/
